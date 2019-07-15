@@ -155,7 +155,7 @@ a:hover{
     #b_1_2>span>span{
         width: 100%;
         height: 100%;
-        background-image: url(straight_arrow.svg);
+        background-image: url(img_web/straight_arrow.svg);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -286,7 +286,7 @@ a:hover{
     height: 1.8vh;
     display: inline-block;
     background-size: contain;
-    background-image: url('dia_arrow.svg');
+    background-image: url('img_web/dia_arrow.svg');
 }
 #logo{
     width: 40%;
@@ -349,7 +349,7 @@ a:hover{
     transform: skewY(25deg) scaleY(-1);
     transform-origin: right top;
     border-bottom-right-radius: 20vh;
-    background-image: url(jump.svg);
+    background-image: url(img_web/jump.svg);
     background-size: 100% 100%;
 
 }
