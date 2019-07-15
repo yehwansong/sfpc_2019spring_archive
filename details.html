@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <title></title>
+  
+    <link rel="stylesheet" href="style_details.css">
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var pos_counter = 0
+        var title_counter = 1
+        var h = window.innerHeight
+
+        if(window.location.hash){
+            title_counter = window.location.href.split('#')[1]
+        }
+
+
+
+
+        height()
+
+        function height(){
+            pos_counter = title_counter - 1
+            for (var i = 16; i > 0; i--) {
+              var b_4_h = h-($('#b_1').outerHeight()+$('#b_2').outerHeight())
+              $('#b_4').css({'height': b_4_h })
+              $('#photo_'+i +' img').css({'height': b_4_h - $('#contents_'+i).outerHeight()})
+              $('#photo_'+i).css({'height': b_4_h - $('#contents_'+i).outerHeight()})
+              show()
+            }
+        }
+
+        function show(){
+            $('#b_2 div').hide()
+            $('#b_3 div').hide()
+            $('#students_'+ title_counter).show()
+            $('#titles_'+ title_counter).show()
+            $('#b_4').addClass('marl_'+pos_counter*100)
+        }
+
+        $('#right').click(function() {
+            if(title_counter > 15){
+               title_counter  = 15
+            }
+            if(pos_counter > 14){
+                pos_counter  = 14
+            }
+
+            title_counter ++
+            pos_counter++
+
+            $('#b_3>div').hide()
+            $('#b_2>div').hide()
+            $('#students_'+(title_counter)).show()
+            $('#titles_'+(title_counter)).show()
+
+            $('#b_4').addClass('marl_'+pos_counter*100)
+             window.location.hash = title_counter;
+        })
+
+        $('#left').click(function() {
+            title_counter --
+            if(title_counter < 1){
+               title_counter  = 1
+            }
+            if(pos_counter < 1){
+                pos_counter  = 1
+            }
+            $('#b_3>div').hide()
+            $('#b_2>div').hide()
+            $('#students_'+(title_counter)).show()
+            $('#titles_'+(title_counter)).show()
+
+            $('#b_4').removeClass('marl_'+pos_counter*100)
+            $('#b_4').addClass('marl_'+(pos_counter-1)*100)
+             window.location.hash = title_counter;
+            pos_counter--
+        })
+        $('#right_shadow').click(function() {
+            if(title_counter > 15){
+               title_counter  = 15
+            }
+            if(pos_counter > 14){
+                pos_counter  = 14
+            }
+
+            title_counter ++
+            pos_counter++
+
+            $('#b_3>div').hide()
+            $('#b_2>div').hide()
+            $('#students_'+(title_counter)).show()
+            $('#titles_'+(title_counter)).show()
+
+            $('#b_4').addClass('marl_'+pos_counter*100)
+             window.location.hash = title_counter;
+        })
+
+        $('#left_shadow').click(function() {
+            title_counter --
+            if(title_counter < 1){
+               title_counter  = 1
+            }
+            if(pos_counter < 1){
+                pos_counter  = 1
+            }
+            $('#b_3>div').hide()
+            $('#b_2>div').hide()
+            $('#students_'+(title_counter)).show()
+            $('#titles_'+(title_counter)).show()
+
+            $('#b_4').removeClass('marl_'+pos_counter*100)
+            $('#b_4').addClass('marl_'+(pos_counter-1)*100)
+             window.location.hash = title_counter;
+            pos_counter--
+        })
+        var clicked = false
+            $('#left_shadow').css( 'cursor', 'url(straight_arrow.png), auto' );
+            $('#right_shadow').css( 'cursor', 'url(straight_arrow_inverted.png), auto' );
+
+
+
+      })
+    </script>
+  </head>
+  <body>
+    <div id="right"></div>
+    <div id="left"></div>
+    <div id="right_shadow"></div>
+    <div id="left_shadow"></div>
+    <a id="back" href="index.html">Home</a>
+    <div id="dis_wrap">
+      <div id="dis_b_2">
+        Artist
+      </div>
+      <div id="dis_b_3">
+        Title
+      </div>
+      <div id="dis_b_4">
+        Description
+      </div>
+    </div>
+    <div id="b_1">
+    </div>
+    <div id="b_2">
+      <div class="contents" id='students_1'>Alexander Mille</div>
+      <div class="contents" id='students_2'>Ariel Uzal</div>
+      <div class="contents" id='students_3'>Bomani Oseni McClendon</div>
+      <div class="contents" id='students_4'>Greg Sadetsky</div>
+      <div class="contents" id='students_5'>Javierde Azkue</div>
+      <div class="contents" id='students_6'>Joseph Wilk</div>
+      <div class="contents" id='students_7'>Juan Miguel Marin</div>
+      <div class="contents" id='students_8'>Luisa Fabrizi</div>
+      <div class="contents" id='students_9'>Mar G.Mcmahon</div>
+      <div class="contents" id='students_10'>Melissa Holmes</div>
+      <div class="contents" id='students_11'>Sara Khan</div>
+      <div class="contents" id='students_12'>Sheldon Chang</div>
+      <div class="contents" id='students_13'>Stefan Pelikan</div>
+      <div class="contents" id='students_14'>Stefanie Schirmer</div>
+      <div class="contents" id='students_15'>Vivienne La</div>
+      <div class="contents" id='students_16'>Yehwan Song</div>
+    </div>
+    <div id="b_3">
+      <div class="contents" id='titles_1'>The Emergence and Decay of Computation</div>
+      <div class="contents" id='titles_2'>por si seguís ahí (in case you’re still there)</div>  
+      <div class="contents" id='titles_3'>Informed Consent</div>
+      <div class="contents" id='titles_4'>Anticipation</div>
+      <div class="contents" id='titles_5'>The more you connect the less you connect</div>
+      <div class="contents" id='titles_6'>How to be seen</div>
+      <div class="contents" id='titles_7'>Drawing Under the Influence of SFPC</div>
+      <div class="contents" id='titles_8'>We were given</div>
+      <div class="contents" id='titles_9'>Homopolar Cicadas</div>
+      <div class="contents" id='titles_10'>I’ll show you when I’m finished</div>
+      <div class="contents" id='titles_11'>Yee-Haw</div>
+      <div class="contents" id='titles_12'>2^7</div>
+      <div class="contents" id='titles_13'>Over</div>
+      <div class="contents" id='titles_14'>Reality®</div>
+      <div class="contents" id='titles_15'>21st Century Ghost</div>     
+      <div class="contents" id='titles_16'>Anti User-friendly</div>
+    </div>
+    <div id="b_4">
+      <div class="contents" id='contents_1'>
+        The Emergence and Decay of Computation consists of receipt printers that hang from their own receipts above a basin of water and slowly print themselves to death over the course of three days.  The printers output rows of a cellular automaton — a mathematical simulation that generates emergent patterns from simple rules. Entering the water short circuits the printer, permanently killing it. The output of the cellular automaton simulation is directly responsible for the destruction of the device computing the simulation.
+      </div>
+      <div class="photos" id="photo_1">
+        <img crossOrigin="anonymous" src="img/Alexander_Miller.jpg">
+      </div>
+
+      <div class="contents" id='contents_2'>
+        Por si seguís ahí is a wearable device intended to find a missing family member. It’s designed around a family portrait with an empty space. The device uses a small camera to constantly search its surroundings for people, isolating any faces that it finds and placing them within the portrait. The found faces are compared to known family members, and the similarity between them is translated into a vibrating heartbeat-like signal that the wearer feels on their chest. The higher the similarity, the faster the heartbeat. The piece is intended to be an emotional and speculative piece of hardware, allowing the wearer to ease the work of constantly looking for someone.
+      </div>
+      <div class="photos" id="photo_2">
+        <img crossOrigin="anonymous" src="img/Ariel_Uzal.jpg">
+      </div>
+      <div class="contents" id='contents_3'>
+        Informed Consent is a projection mapping installation that places the viewer into the uncomfortable position of signing a consent form for a clinical trial. The desperate hands–which attempt to break out of the pages of the consent form–represent the suffering of the many people who have been exploited by medical experiments, medical practitioners, and even by the ‘informed consent’ process itself. The piece is complemented by a book called “Black Health”, which contains a collection of references to Black people scraped from WebMD.
+      </div>
+      <div class="photos" id="photo_3">
+        <img crossOrigin="anonymous" src="img/Bomani_McClendon.jpg">
+      </div>
+      <div class="contents" id='contents_4'>
+        Anticipation is a comedic interactive piece exploring unforeseen uses of the human voice as a musical instrument. As visitors approach the piece, set in a dystopian karaoke environment of badly hung glittery decoration, the artist / MC invites them to sing, whistle or make any sound into a microphone. Many elements seem off: the microphone is disconnected, while a crudely attached webcam whose lens is covered with tape appears to intermittently glow blue. What is going on? The sounds provided by the visitors are transformed into small notes which are embedded into various MIDI jazz song standards, following the musical parts of the piano, bass or drums. The unintended and distorted results tend to approach both limits of the best/worse spectrum of appreciation — the resulting music is both unbearably wrong and unmusical, while being satisfying in its silliness and unnecessary complexity.
+      </div>
+      <div class="photos" id="photo_4">
+        <img crossOrigin="anonymous" src="img/Greg_Sadetsky.jpg">
+      </div>
+      <div class="photos" id="photo_5">
+        <img crossOrigin="anonymous" src="img/Javier_de_Azkue.jpeg">
+      </div>
+      <div class="photos" id="photo_6">
+        <img crossOrigin="anonymous" src="img/Joseph_Wilk.jpg">
+      </div>
+      <div class="photos" id="photo_7">
+        <img crossOrigin="anonymous" src="img/Juan_Miguel_Marin_b_01.jpg">
+        <img crossOrigin="anonymous" src="img/Juan_Miguel_Marin_b_02.jpg">
+      </div>
+      <div class="photos" id="photo_8">
+        <img crossOrigin="anonymous" src="img/Luisa_Fabrizi.jpg">
+      </div>
+      <div class="photos" id="photo_9">
+        <img crossOrigin="anonymous" src="img/Mar_Mcmahon.jpg">
+      </div>
+      <div class="photos" id="photo_10">
+        <img crossOrigin="anonymous" src="img/Melissa_Holmes.jpg">
+      </div>
+      <div class="photos" id="photo_11">
+        <img crossOrigin="anonymous" src="img/Sara_Khan_01.jpg">
+        <img crossOrigin="anonymous" src="img/Sara_Khan_02.jpg">
+      </div>
+      <div class="photos" id="photo_12">
+        <img crossOrigin="anonymous" src="img/Sheldon_Chang.jpg">
+      </div>
+      <div class="photos" id="photo_13">
+        <img crossOrigin="anonymous" src="img/Stefan_Pelikan.jpg">
+      </div>
+      <div class="photos" id="photo_14">
+        <img crossOrigin="anonymous" src="img/Stefanie_Schirmer.jpg">
+      </div>
+      <div class="photos" id="photo_15">
+        <img crossOrigin="anonymous" src="img/Vivienne_La.jpg">
+      </div>
+      <div class="photos" id="photo_16">
+        <img crossOrigin="anonymous" src="img/yehwansong.jpg">
+      </div>
+      <div class="contents" id='contents_5'>
+        This piece is about memory’s fragmented nature. Two separated 4:3 monitors on the wall are linked by 5 interchangeable banana plugs. The screen on the left shows raw footage from a VHS family video from 1992, and on one side of the monitor’s frame 5 color sockets stand as sources, where each source is a member of the family in the video. The screen on the right is a mirror of the left screen, where each socket stands as an input for these family members, and each input represents a memory mechanism, or a memory ‘process’. The user is in charge of connecting each member of the family on the left with a different process on the right and creating a collage of modified memories on the right screen, by filtering the content, reordering the frames, and erasing faces in real time. The screen on the left represents the unaltered past, and the screen on the right represents the way we tend to remember things. The more you connect the less you connect is an interactive meditation on childhood and memory mechanisms, distorted by computer vision scripts, colored cables and sorting algorithms.
+      </div>
+      <div class="contents" id='contents_6'>
+        As a remote student to SFPC, Joseph experiences the people and space of the school through cameras, screens and software. How to be seen attempts to bring the artist into the physical space that he has never physically experienced through an interactive, streamed live coding performance. The performance consists of a tablet which displays a live stream of the artist. Throughout the exhibition, he writes programming code live to control a second screen — a digitally transformed version of the video stream. The produced graphics use depth and dimension to suggest that the artist’s image is being projected out of the screen and into the gallery space itself. Initially, viewers of the piece might not understand that the artist is present through the live stream. But this is revealed when viewers pick up the headphones and engage with Joseph directly, interrupting and becoming a part of the performance. Visitors are invited to take “Joseph” in their hands and show him around the gallery, becoming his voice and avatar. Through this interaction, How to be seen explores themes of visibility, control and dependency.
+      </div>
+      <div class="contents" id='contents_7'>
+        An absolute orientation sensor turns a marker into a controller. As it grows, the drawing reveals a meditative environmental soundscape in real-time. The sonic palette is a collection of site-specific field-recordings captured around The School for Poetic Computation, throughout the spring session. From rain on the courtyard outside, to motors from hardware class, to the sounds of people typing away on their computers. The performance is an exploration of the relationship between memory, sound, and emotion.
+      </div>
+      <div class="contents" id='contents_8'>
+        We were given is a sculptural electronic circuit. The interactive installation is composed of three main parts: a micro-controller (which is the centre and  brain of the circuit), a combination of infrared emitter and receiver on one side, and a matrix of UV LEDS controlled by a multiplexer on the other side. When somebody interrupts the communication between the infrared emitter and the receiver, the UV LED matrix shines light on a text written with invisible ink, making it finally readable. This circuit is the physical manifestation of an emotional and psychological process I took myself through in the immediate past. It narrates the powerful healing force derived from the severing of deep, yet harmful relationships. In the making of this work I discovered an exciting new expressive medium and I plan to make a whole new series of sculptural circuits during the next few months.
+      </div>
+      <div class="contents" id='contents_9'>
+        Seven simple homopolar motor bugs—battery, wire, nail, magnet—are singing into three tubes. It’s mating season! A microphone amplifies their horny song for us to hear. The sound of bugs reminds everybody of somewhere.
+      </div>
+      <div class="contents" id='contents_10'>
+        The pen plotter is creating a drawing today. Let it work in peace. Artists need to focus. I’ll Show You When I’m Finished is a performance by a computer and a robotic drawing machine. Lines are drawn in real time while the computer randomly executes rules for splitting a page of triangles into smaller and smaller shapes. Thousands of triangles eventually form a unique composition.
+      </div>
+      <div class="contents" id='contents_11'>
+        Oscillating blue and red lights trick the eye into perceiving motion in a double exposed image of a bucking bronco. An exposed circuit board reveals the simplicity of the mechanism.
+      </div>
+      <div class="contents" id='contents_12'>
+        A binary counter uses a neural network to learn to count. Blank clay forms represent binary digits, with a raised flag indicating one and lowered indicating zero. The learning is conducted in real time, dramatically stretching out a process that ordinarily takes hours to one that could run for months. This piece is a performance that is meant to interrogate the anxiety and wonder provoked by seeing machines get better at an elemental act of human cognition.
+      </div>
+      <div class="contents" id='contents_13'>
+        What happens when we send digital information via 50 year old walkie-talkie? The results may surprise you.
+      </div>
+      <div class="contents" id='contents_14'>
+        Reality® is an immersive installation for a single person at a time. It creates a space that lets the viewer experience the collective reaction to the 2016 election in the US. It is a meditation on the feelings of anxiety surrounding it. An audio reading of a fictional anti-anxiety medication is accompanied by video composed of photos that I took during the time of the election when people put up post-its with their grievances and fears in New York's Union Square station. People opened up about their vulnerabilities in this transient emergent space. With this piece, I wish to create a dialogue about these collective feelings.
+      </div>
+      <div class="contents" id='contents_15'>
+        As I broadcast and transmit through different channels online, I contribute to the fabrication of an alien or machinic entity of my lived experiences, materialising and updating within virtual space. In the event of my death, my virtual body becomes “memorialised” by default, prolonging interaction with other users, contributing more data to be analysed to the social network’s profit. This is an altar to offer my virtual body anything it might want in the afterlife. Please place a stick of incense in the corresponding cup to make your offering.
+      </div>
+      <div class="contents" id='contents_16'>
+        The concept of “user friendliness” focuses on ease of use above all else. It asks as little of the user as possible. In order to achieve this, most websites use standardized design and interface conventions that don’t require the user to learn how to use a new interface — instead, users repeat the behavior they’ve been trained to do. This automatic repetition of action causes people to lose their content awareness. In Anti User-friendly, I construct hard-to-use devices and interfaces in order to challenge the notion of user friendliness and bring back content awareness. The piece creates a situation in which users need to explore and learn before they can use the interfaces. Through this process, users are given an opportunity to become conscious again — in a way, a form of self care.
+      </div>
+    </div>
+    <div id="b_5" class="description">
+    </div>
+    <div id="b_6" class="logo_wrap">
+      <a href="https://sfpc.io/">School for Poetic Computation is an artist run school in New York that was founded in 2013. ....</a>
+      <img crossOrigin="anonymous" src="logo.png">
+    </div>
+
+  </body>
+</html>

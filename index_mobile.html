@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<title></title>
+	<style>
+		*{
+  			font-family: tnr;
+			font-size: 2.8vh;
+			line-height: 1.6;
+			padding: 0;
+			margin: 0;
+			-webkit-transform-style: preserve-3d;
+		    -webkit-backface-visibility: hidden; 
+		    -ms-transform: translateZ(0); /* IE 9 */
+		    -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+		    transform: translateZ(0);
+		}
+		@font-face {
+			font-family: tnr;
+			src: url( 'webfonts/39A9C4_0_0.woff');
+		}
+		body, html{
+			height: 100%;
+			width: 100%;
+			overflow: hidden;
+		}
+		#img_innerwrapper{
+			width: 300vh;
+			height: 300vh;
+			perspective: 10000000000000vh;
+			position: absolute;
+			margin-left: calc(-150vh + 50%);
+			transform: rotate3d(1, 0, 0, 60deg) scale(0.7);
+			margin-top: -110vh;
+		}
+		#img_wrapper{ 
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		img{
+			height: 100%;
+			transition-timing-function: linear;
+			-webkit-animation: rotating 60s linear infinite;
+			-moz-animation: rotating 60s linear infinite;
+			-ms-animation: rotating 60s linear infinite;
+			-o-animation: rotating 60s linear infinite;
+			animation: rotating 60s linear infinite;
+		}
+		@keyframes rotating {
+		  from {
+				-ms-transform: rotate(0deg);
+				-moz-transform: rotate(0deg);
+				-webkit-transform: rotate(0deg);
+				-o-transform: rotate(0deg);
+				transform: rotate(0deg);
+		  	}
+		  to {
+				-ms-transform: rotate(360deg);
+				-moz-transform: rotate(360deg);
+				-webkit-transform: rotate(360deg);
+				-o-transform: rotate(360deg);
+				transform: rotate(360deg);
+		  	}
+		}
+		#info{
+			padding-left: 17.92vh;
+			z-index: 100000;
+			top: calc(100% - 3.2vh);
+			right: 0;
+			width: 100vh;
+			position: absolute;
+			transform: rotatez(-90deg) translateX(100%);
+			transform-origin: right bottom;
+			height: 3.88vh;
+		}
+		#intro{
+			background: white;
+			position: absolute;
+			top: 100%;
+			transform: translateY(-100%);
+			left: 0;
+			width: 100vw;
+
+		}
+		#gradient{
+			z-index: 10000;
+			width: 100vw;
+			height: 50%;
+			top: calc(50% - 17.92vh);
+			background: linear-gradient(to top, hsla(0, 6%, 60%, 1), #ccc6c6 1.5%, #ffffff0d 40%);
+			position: absolute;
+		}
+		#info span{
+			float: left;
+			margin-left: 2.8vh;
+			padding-left: 5;
+			background: black;
+			display: none;
+			color: white;
+		}
+		.artist_lined{
+			left: 17.92vh;
+		}
+		.artwork_lined{
+			/*left: 50%*/
+		}
+		#click{
+			width: 100vw;
+			height: 100%;
+			position: absolute;
+			z-index: 100000000000000000;
+			left: 0;
+			top: 0
+		}
+	</style>
+</head>
+<body>
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+			var counter = 0
+			rotate_whole()
+
+		function rotate_whole() {
+			counter++
+			$('.artwork_lined').hide()
+			$('.artist_lined').hide()
+			$('.post'+((counter%16)+1)+'artist_lined').css({'display':'inline-block'})
+			$('.post'+((counter%16)+1)+'artwork_lined').css({'display':'inline-block'})
+			setTimeout(function(){ 
+				rotate_whole()
+			}, 3750);
+		}
+
+		$('#intro').click(function() {
+			window.location.href = 'details_mobile.html#'+((counter%16)+1)
+		});
+		$('#click').click(function() {
+			window.location.href = 'details_mobile.html#'+((counter%16)+1)
+		});
+	})
+	</script>
+	<div id="click"></div>
+	<div id="gradient"></div>
+	<div id="img_wrapper">
+		<div id="img_innerwrapper">
+		<img src="mobile_image.png">
+		</div>
+	</div>
+        <span id="info">
+            <span class="post1artist_lined artist_lined">Alexander Miller,</span> 
+            <span class="post2artist_lined artist_lined">Ariel Uzal, </span>
+            <span class="post3artist_lined artist_lined">Bomani Oseni McClendon, </span>
+            <span class="post4artist_lined artist_lined">Greg Sadetsky, </span>
+            <span class="post5artist_lined artist_lined">Javier deAzkue, </span>
+            <span class="post6artist_lined artist_lined">Joseph Wilk, </span>
+            <span class="post7artist_lined artist_lined">Juan Miguel Marin, </span>
+            <span class="post8artist_lined artist_lined">Luisa Fabrizi, </span>
+            <span class="post9artist_lined artist_lined">Mar G.Mcmahon, </span>
+            <span class="post10artist_lined artist_lined">Melissa Holmes, </span>
+            <span class="post11artist_lined artist_lined">Sara Khan, </span>
+            <span class="post12artist_lined artist_lined">Sheldon Chang,</span>
+            <span class="post13artist_lined artist_lined">Stefan Pelikan,</span>
+            <span class="post14artist_lined artist_lined">Stefanie Schirmer, </span>
+            <span class="post15artist_lined artist_lined">Vivienne La,</span>
+            <span class="post16artist_lined artist_lined">Yehwan Song</span>
+
+            <span class="post1artwork_lined artwork_lined">The Emergence and Decay of Computation</span>
+            <span class="post2artwork_lined artwork_lined">por si seguís ahí (in case you’re still there)</span>
+            <span class="post3artwork_lined artwork_lined">Informed Consent</span>
+            <span class="post4artwork_lined artwork_lined">Anticipation</span>
+            <span class="post5artwork_lined artwork_lined">The more you connect the less you connect</span>
+            <span class="post6artwork_lined artwork_lined">How to be seen</span>
+            <span class="post7artwork_lined artwork_lined">Drawing Under the Influence of SFPC</span>
+            <span class="post8artwork_lined artwork_lined">We were given</span>
+            <span class="post9artwork_lined artwork_lined">Homopolar Cicadas</span>
+            <span class="post10artwork_lined artwork_lined">I’ll show you when I’m finished</span>
+            <span class="post11artwork_lined artwork_lined">Yee-Haw</span>
+            <span class="post12artwork_lined artwork_lined">2^7</span>
+            <span class="post13artwork_lined artwork_lined">Over</span>
+            <span class="post14artwork_lined artwork_lined">Reality®</span>
+            <span class="post15artwork_lined artwork_lined">21st Century Ghost</span>
+            <span class="post16artwork_lined artwork_lined">Anti User-friendly</span>
+        </span>
+
+        <span id="intro">Archive of school for poetic computation (SFPC) students 2019 spring session showcase output.<br> Click to read more</span>  
+</body>
+</html>
