@@ -452,25 +452,26 @@ function getRotationDegrees(obj) {
 		$('#b_3').attr("href",'details.html#'+rot_counter);
 		selected_artist = document.getElementsByClassName('post'+rot_counter+'artist')
 		selected_artwork = document.getElementsByClassName('post'+rot_counter+'artwork')
-		selected_artwork_lined = document.querySelector('.post'+rot_counter+'artwork_lined')
-		selected_artist_lined = document.querySelector('.post'+rot_counter+'artist_lined')
 
 		$('.description>a').hide()
 		$('#contents_'+rot_counter).show()
 		$('#photo_'+rot_counter).show()
 
 		for (var i = selected_artist.length - 1; i >= 0; i--) {
-				{  
-					selected_artist[i].classList.add("c_1");
-				}
+			selected_artist[i].classList.add("c_1");
 		}
 		for (var i = selected_artwork.length - 1; i >= 0; i--) {
-				{
-					selected_artwork[i].classList.add("c_2");
-				}
+			selected_artwork[i].classList.add("c_2");
 		}
-		selected_artwork_lined.classList.add("c_2_lined");
-		selected_artist_lined.classList.add("c_3_lined");
+
+		selected_artwork_lined = document.querySelector('.post'+rot_counter+'artwork_lined')
+    if(selected_artwork_lined !== null) {
+      selected_artwork_lined.classList.add("c_2_lined");
+    }
+		selected_artist_lined = document.querySelector('.post'+rot_counter+'artist_lined')
+    if(selected_artist_lined !== null) {
+      selected_artist_lined.classList.add("c_3_lined");
+    }
 	}
 
   setInterval(rotate_whole, 300);
