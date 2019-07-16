@@ -87,6 +87,15 @@ $(window).resize(function(){
     location.reload();
 });
 
+
+
+$('#b_3').hover(
+  function() {
+	$('#b_2').css({backgroundColor:'#cacaca'})
+  }, function() {
+	$('#b_2').css({backgroundColor:'white'})
+  }
+)
 // `b_1_3_text` needs to be called first, as it modifies the #b_1_3 and #b_1_4
 // DOM elements. calling `screen_size` first leads to `rotate_whole` being
 // called, which will modify the classes of the DOM elements from index.html.
