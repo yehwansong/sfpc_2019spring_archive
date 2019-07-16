@@ -86,34 +86,40 @@ var b_3_ybound_2 = b_3_t + b_3_h;
 $(window).resize(function(){
     location.reload();
 });
-screen_size()
+
+// `b_1_3_text` needs to be called first, as it modifies the #b_1_3 and #b_1_4
+// DOM elements. calling `screen_size` first leads to `rotate_whole` being
+// called, which will modify the classes of the DOM elements from index.html.
+// This is wrong -- `rotate_whole` should change classnames of the DOM elements
+// virtually created by `b_1_3_text`. [gs]
 b_1_3_text()
+screen_size()
             
 
 function b_1_3_text(){
 	if(w/h>1610/900){
-		$('#b_1_3').html('<a>16 artists : </a><a href="details.html#1" class="post1artist_lined artist_lined">Alexander Miller,</a> <a href="details.html#2" class="post2artist_lined artist_lined">Ariel Uzal, </a><a href="details.html#3" class="post3artist_lined artist_lined">Bomani Oseni McClendon, </a><a href="details.html#4" class="post4artist_lined artist_lined">Greg Sadetsky, </a><a href="details.html#5" class="post5artist_lined artist_lined">Javier deAzkue, </a><a href="details.html#6" class="post6artist_lined artist_lined">Joseph Wilk, </a><a href="details.html#7" class="post7artist_lined artist_lined">Juan Miguel Marin, </a><a href="details.html#8" class="post8artist_lined artist_lined">Luisa Fabrizi, </a><a href="details.html#9" class="post9artist_lined artist_lined">Mar G.Mcmahon, </a><a href="details.html#10" class="post10artist_lined artist_lined">Melissa Holmes, </a><a href="details.html#11" class="post11artist_lined artist_lined">Sara Khan, </a><a href="details.html#12" class="post12artist_lined artist_lined">Sheldon Chang,</a><a href="details.html#13" class="post13artist_lined artist_lined">Stefan Pelikan,</a>');
+		$('#b_1_3').html('<a>16 artists : </a><a href="details.html#1" class="post1artist_lined artist_lined">Alexander Miller,</a> <a href="details.html#2" class="post2artist_lined artist_lined">Ariel Uzal, </a><a href="details.html#3" class="post3artist_lined artist_lined">Bomani Oseni McClendon, </a><a href="details.html#4" class="post4artist_lined artist_lined">Greg Sadetsky, </a><a href="details.html#5" class="post5artist_lined artist_lined">Javier de Azkue, </a><a href="details.html#6" class="post6artist_lined artist_lined">Joseph Wilk, </a><a href="details.html#7" class="post7artist_lined artist_lined">Juan Miguel Marin, </a><a href="details.html#8" class="post8artist_lined artist_lined">Luisa Fabrizi, </a><a href="details.html#9" class="post9artist_lined artist_lined">Mar G.Mcmahon, </a><a href="details.html#10" class="post10artist_lined artist_lined">Melissa Holmes, </a><a href="details.html#11" class="post11artist_lined artist_lined">Sara Khan, </a><a href="details.html#12" class="post12artist_lined artist_lined">Sheldon Chang,</a><a href="details.html#13" class="post13artist_lined artist_lined">Stefan Pelikan,</a>');
 
 		$('#b_1_4').html('<a href="details.html#14" class="post14artist_lined artist_lined">Stefanie Schirmer, </a><a href="details.html#15" class="post15artist_lined artist_lined">Vivienne La,</a><a href="details.html#16" class="post16artist_lined artist_lined">Yehwan Song</a>');
 	}      
             
 	else if(w/h>1500/900){
-		$('#b_1_3').html('<a>16 artists : </a><a href="details.html#1" class="post1artist_lined artist_lined">Alexander Miller,</a> <a href="details.html#2" class="post2artist_lined artist_lined">Ariel Uzal, </a><a href="details.html#3" class="post3artist_lined artist_lined">Bomani Oseni McClendon, </a><a href="details.html#4" class="post4artist_lined artist_lined">Greg Sadetsky, </a><a href="details.html#5" class="post5artist_lined artist_lined">Javier deAzkue, </a><a href="details.html#6" class="post6artist_lined artist_lined">Joseph Wilk, </a><a href="details.html#7" class="post7artist_lined artist_lined">Juan Miguel Marin, </a><a href="details.html#8" class="post8artist_lined artist_lined">Luisa Fabrizi, </a><a href="details.html#9" class="post9artist_lined artist_lined">Mar G.Mcmahon, </a><a href="details.html#10" class="post10artist_lined artist_lined">Melissa Holmes, </a><a href="details.html#11" class="post11artist_lined artist_lined">Sara Khan, </a><a href="details.html#12" class="post12artist_lined artist_lined">Sheldon Chang,</a>');
+		$('#b_1_3').html('<a>16 artists : </a><a href="details.html#1" class="post1artist_lined artist_lined">Alexander Miller,</a> <a href="details.html#2" class="post2artist_lined artist_lined">Ariel Uzal, </a><a href="details.html#3" class="post3artist_lined artist_lined">Bomani Oseni McClendon, </a><a href="details.html#4" class="post4artist_lined artist_lined">Greg Sadetsky, </a><a href="details.html#5" class="post5artist_lined artist_lined">Javier de Azkue, </a><a href="details.html#6" class="post6artist_lined artist_lined">Joseph Wilk, </a><a href="details.html#7" class="post7artist_lined artist_lined">Juan Miguel Marin, </a><a href="details.html#8" class="post8artist_lined artist_lined">Luisa Fabrizi, </a><a href="details.html#9" class="post9artist_lined artist_lined">Mar G.Mcmahon, </a><a href="details.html#10" class="post10artist_lined artist_lined">Melissa Holmes, </a><a href="details.html#11" class="post11artist_lined artist_lined">Sara Khan, </a><a href="details.html#12" class="post12artist_lined artist_lined">Sheldon Chang,</a>');
 		$('#b_1_4').html('<a href="details.html#13" class="post13artist_lined artist_lined">Stefan Pelikan,</a><a href="details.html#14" class="post14artist_lined artist_lined">Stefanie Schirmer, </a><a href="details.html#15" class="post15artist_lined artist_lined">Vivienne La,</a><a href="details.html#16" class="post16artist_lined artist_lined">Yehwan Song</a>');
 	}
 
 	else if(w/h>1390/900){
-		$('#b_1_3').html('<a>16 artists : </a><a href="details.html#1" class="post1artist_lined artist_lined">Alexander Miller,</a> <a href="details.html#2" class="post2artist_lined artist_lined">Ariel Uzal, </a><a href="details.html#3" class="post3artist_lined artist_lined">Bomani Oseni McClendon, </a><a href="details.html#4" class="post4artist_lined artist_lined">Greg Sadetsky, </a><a href="details.html#5" class="post5artist_lined artist_lined">Javier deAzkue, </a><a href="details.html#6" class="post6artist_lined artist_lined">Joseph Wilk, </a><a href="details.html#7" class="post7artist_lined artist_lined">Juan Miguel Marin, </a><a href="details.html#8" class="post8artist_lined artist_lined">Luisa Fabrizi, </a><a href="details.html#9" class="post9artist_lined artist_lined">Mar G.Mcmahon, </a><a href="details.html#10" class="post10artist_lined artist_lined">Melissa Holmes, </a><a href="details.html#11" class="post11artist_lined artist_lined">Sara Khan, </a>');
+		$('#b_1_3').html('<a>16 artists : </a><a href="details.html#1" class="post1artist_lined artist_lined">Alexander Miller,</a> <a href="details.html#2" class="post2artist_lined artist_lined">Ariel Uzal, </a><a href="details.html#3" class="post3artist_lined artist_lined">Bomani Oseni McClendon, </a><a href="details.html#4" class="post4artist_lined artist_lined">Greg Sadetsky, </a><a href="details.html#5" class="post5artist_lined artist_lined">Javier de Azkue, </a><a href="details.html#6" class="post6artist_lined artist_lined">Joseph Wilk, </a><a href="details.html#7" class="post7artist_lined artist_lined">Juan Miguel Marin, </a><a href="details.html#8" class="post8artist_lined artist_lined">Luisa Fabrizi, </a><a href="details.html#9" class="post9artist_lined artist_lined">Mar G.Mcmahon, </a><a href="details.html#10" class="post10artist_lined artist_lined">Melissa Holmes, </a><a href="details.html#11" class="post11artist_lined artist_lined">Sara Khan, </a>');
 
 		$('#b_1_4').html('<a href="details.html#12" class="post12artist_lined artist_lined">Sheldon Chang,</a><a href="details.html#13" class="post13artist_lined artist_lined">Stefan Pelikan,</a><a href="details.html#14" class="post14artist_lined artist_lined">Stefanie Schirmer, </a><a href="details.html#15" class="post15artist_lined artist_lined">Vivienne La,</a><a href="details.html#16" class="post16artist_lined artist_lined">Yehwan Song</a>');
 	}
 
 	else if(w/h>1305/900){
-		$('#b_1_3').html('<a>16 artists : </a><a href="details.html#1" class="post1artist_lined artist_lined">Alexander Miller,</a> <a href="details.html#2" class="post2artist_lined artist_lined">Ariel Uzal, </a><a href="details.html#3" class="post3artist_lined artist_lined">Bomani Oseni McClendon, </a><a href="details.html#4" class="post4artist_lined artist_lined">Greg Sadetsky, </a><a href="details.html#5" class="post5artist_lined artist_lined">Javier deAzkue, </a><a href="details.html#6" class="post6artist_lined artist_lined">Joseph Wilk, </a><a href="details.html#7" class="post7artist_lined artist_lined">Juan Miguel Marin, </a><a href="details.html#8" class="post8artist_lined artist_lined">Luisa Fabrizi, </a><a href="details.html#9" class="post9artist_lined artist_lined">Mar G.Mcmahon, </a><a href="details.html#10" class="post10artist_lined artist_lined">Melissa Holmes, </a>');
+		$('#b_1_3').html('<a>16 artists : </a><a href="details.html#1" class="post1artist_lined artist_lined">Alexander Miller,</a> <a href="details.html#2" class="post2artist_lined artist_lined">Ariel Uzal, </a><a href="details.html#3" class="post3artist_lined artist_lined">Bomani Oseni McClendon, </a><a href="details.html#4" class="post4artist_lined artist_lined">Greg Sadetsky, </a><a href="details.html#5" class="post5artist_lined artist_lined">Javier de Azkue, </a><a href="details.html#6" class="post6artist_lined artist_lined">Joseph Wilk, </a><a href="details.html#7" class="post7artist_lined artist_lined">Juan Miguel Marin, </a><a href="details.html#8" class="post8artist_lined artist_lined">Luisa Fabrizi, </a><a href="details.html#9" class="post9artist_lined artist_lined">Mar G.Mcmahon, </a><a href="details.html#10" class="post10artist_lined artist_lined">Melissa Holmes, </a>');
 		$('#b_1_4').html('<a href="details.html#11" class="post11artist_lined artist_lined">Sara Khan, </a><a href="details.html#12" class="post12artist_lined artist_lined">Sheldon Chang,</a><a href="details.html#13" class="post13artist_lined artist_lined">Stefan Pelikan,</a><a href="details.html#14" class="post14artist_lined artist_lined">Stefanie Schirmer, </a><a href="details.html#15" class="post15artist_lined artist_lined">Vivienne La,</a><a href="details.html#16" class="post16artist_lined artist_lined">Yehwan Song</a>');
 	}
 	else{
-		$('#b_1_3').html('<a>16 artists : </a><a href="details.html#1" class="post1artist_lined artist_lined">Alexander Miller,</a> <a href="details.html#2" class="post2artist_lined artist_lined">Ariel Uzal, </a><a href="details.html#3" class="post3artist_lined artist_lined">Bomani Oseni McClendon, </a><a href="details.html#4" class="post4artist_lined artist_lined">Greg Sadetsky, </a><a href="details.html#5" class="post5artist_lined artist_lined">Javier deAzkue, </a><a href="details.html#6" class="post6artist_lined artist_lined">Joseph Wilk, </a><a href="details.html#7" class="post7artist_lined artist_lined">Juan Miguel Marin, </a><a href="details.html#8" class="post8artist_lined artist_lined">Luisa Fabrizi, </a><a href="details.html#9" class="post9artist_lined artist_lined">Mar G.Mcmahon, </a>');
+		$('#b_1_3').html('<a>16 artists : </a><a href="details.html#1" class="post1artist_lined artist_lined">Alexander Miller,</a> <a href="details.html#2" class="post2artist_lined artist_lined">Ariel Uzal, </a><a href="details.html#3" class="post3artist_lined artist_lined">Bomani Oseni McClendon, </a><a href="details.html#4" class="post4artist_lined artist_lined">Greg Sadetsky, </a><a href="details.html#5" class="post5artist_lined artist_lined">Javier de Azkue, </a><a href="details.html#6" class="post6artist_lined artist_lined">Joseph Wilk, </a><a href="details.html#7" class="post7artist_lined artist_lined">Juan Miguel Marin, </a><a href="details.html#8" class="post8artist_lined artist_lined">Luisa Fabrizi, </a><a href="details.html#9" class="post9artist_lined artist_lined">Mar G.Mcmahon, </a>');
 		$('#b_1_4').html('<a href="details.html#10" class="post10artist_lined artist_lined">Melissa Holmes, </a><a href="details.html#11" class="post11artist_lined artist_lined">Sara Khan, </a><a href="details.html#12" class="post12artist_lined artist_lined">Sheldon Chang,</a><a href="details.html#13" class="post13artist_lined artist_lined">Stefan Pelikan,</a><a href="details.html#14" class="post14artist_lined artist_lined">Stefanie Schirmer, </a><a href="details.html#15" class="post15artist_lined artist_lined">Vivienne La,</a><a href="details.html#16" class="post16artist_lined artist_lined">Yehwan Song</a>');
 	}
 }
@@ -401,11 +407,9 @@ function getRotationDegrees(obj) {
 
 	var whole_val
 	var innernumber
+
 	function rotate_whole() {
 	    $('#whole').addClass('rotating')
-		setTimeout(function(){ 
-			rotate_whole()
-		}, 300);
 
 	    	whole_val = getRotationDegrees($('#whole'))
 	    	if(whole_val%360<140 && whole_val%360>120){
@@ -428,7 +432,6 @@ function getRotationDegrees(obj) {
 
 		var diff = Math.abs(new Date() - new Date('2019/5/14 00:00'));
 		var diffMins = Math.floor((diff/1000)/60);
-		diffMins
 		$('.ago_minute').html(diffMins)
 
 
@@ -440,38 +443,37 @@ function getRotationDegrees(obj) {
 		$( '.artist_lined').removeClass('c_3_lined')
 		$( '.inner').removeClass('c_2')
 		var unit = 360/32
-		for (var i = 16; i >= 0; i--) {
-				rot_counter = 15 - Math.floor((((whole_val-unit)%360)+1)/(unit*2))
-				if( Math.floor(((whole_val%360)+1)/(unit*2)) == 15){
-					rot_counter = 0
-				}
-				$('#b_2').attr("href", 'details.html#'+rot_counter);
-				$('#b_3').attr("href",'details.html#'+rot_counter);
-				selected_artist = document.getElementsByClassName('post'+rot_counter+'artist')
-				selected_artwork = document.getElementsByClassName('post'+rot_counter+'artwork')
-				selected_artwork_lined = document.getElementsByClassName('post'+rot_counter+'artwork_lined')
-				selected_artist_lined = document.getElementsByClassName('post'+rot_counter+'artist_lined')
+
+		rot_counter = 15 - Math.floor((((whole_val-unit)%360)+1)/(unit*2))
+		if( Math.floor(((whole_val%360)+1)/(unit*2)) == 15){
+			rot_counter = 0
 		}
+		$('#b_2').attr("href", 'details.html#'+rot_counter);
+		$('#b_3').attr("href",'details.html#'+rot_counter);
+		selected_artist = document.getElementsByClassName('post'+rot_counter+'artist')
+		selected_artwork = document.getElementsByClassName('post'+rot_counter+'artwork')
+
 		$('.description>a').hide()
 		$('#contents_'+rot_counter).show()
 		$('#photo_'+rot_counter).show()
 
 		for (var i = selected_artist.length - 1; i >= 0; i--) {
-				{  
-					selected_artist[i].classList.add("c_1");
-				}
+			selected_artist[i].classList.add("c_1");
 		}
 		for (var i = selected_artwork.length - 1; i >= 0; i--) {
-				{
-					selected_artwork[i].classList.add("c_2");
-					selected_artwork_lined[0].classList.add("c_2_lined");
-					selected_artist_lined[0].classList.add("c_3_lined");
-				}
+			selected_artwork[i].classList.add("c_2");
 		}
 
+		selected_artwork_lined = document.querySelector('.post'+rot_counter+'artwork_lined')
+    if(selected_artwork_lined !== null) {
+      selected_artwork_lined.classList.add("c_2_lined");
+    }
+		selected_artist_lined = document.querySelector('.post'+rot_counter+'artist_lined')
+    if(selected_artist_lined !== null) {
+      selected_artist_lined.classList.add("c_3_lined");
+    }
 	}
 
-
-
+  setInterval(rotate_whole, 300);
 
 })
