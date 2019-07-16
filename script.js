@@ -473,6 +473,6 @@ function getRotationDegrees(obj) {
 		selected_artist_lined.classList.add("c_3_lined");
 	}
 
-  setInterval(rotate_whole, 1000);
+  setInterval(rotate_whole, 300);
 
 })
